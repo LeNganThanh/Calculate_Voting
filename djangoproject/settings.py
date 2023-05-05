@@ -34,14 +34,22 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    "cloudinary_storage",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "calculatorapp"
+    "calculatorapp",
 ]
+
+
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME":"drqdvm7ib",
+    "API_KEY":"812881794794216",
+    "API_SECRET":"5NuAPSFGdFSamrK-XIZpEPMZqBs"
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -137,3 +145,6 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static/")
 ]
+
+# connection to cloud
+STATICFILES_STORAGE = "cloudinary_storage.storage.StaticHashedCloudinaryStorage"
